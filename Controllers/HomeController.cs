@@ -6,16 +6,22 @@ namespace CustomValidationAttributeAndExtensionMethod.Controllers;
 
 public class HomeController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
 
-    public HomeController(ILogger<HomeController> logger)
-    {
-        _logger = logger;
-    }
-
-    public IActionResult Index()
+    public IActionResult Create()
     {
         return View();
+    }
+    [HttpPost]
+    public IActionResult Create(Employee employee)
+    {
+        if(ModelState.IsValid)
+        {
+            return View(employee);
+        }
+        else
+        {
+            return View(employee);
+        }
     }
 
     public IActionResult Privacy()
