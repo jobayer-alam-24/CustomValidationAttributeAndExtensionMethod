@@ -23,6 +23,17 @@ public class HomeController : Controller
             return View(employee);
         }
     }
+    
+    public IActionResult Index()
+    {
+        var Employee = new Employee()
+        {
+            Name = "Rahim khan",
+            Age = 15,
+            DOB = DateTime.Now
+        };
+        return View(Employee);
+    }
 
     public IActionResult Privacy()
     {
